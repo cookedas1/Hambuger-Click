@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>햄버거 버튼</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/output.css">
+</head>
+<body class="h-screen bg-blue-900 text-white relative overflow-hidden">
+
+  <!-- 눈 내리는 효과 -->
+  <div id="snow-container" class="absolute inset-0 pointer-events-none"></div>
+
+  <!-- 상단 메뉴 -->
+  <nav class="bg-gray-800 w-full py-4 fixed top-0">
+    <ul class="flex justify-center space-x-6">
+      <li class="text-white text-lg font-bold hover:text-red-500 cursor-pointer">홈</li>
+      <li class="text-white text-lg font-bold hover:text-red-500 cursor-pointer">메뉴</li>
+      <li class="text-white text-lg font-bold hover:text-red-500 cursor-pointer">문의</li>
+    </ul>
+  </nav>
+
+  <!-- 콘텐츠 영역 -->
+  <div class="flex flex-col items-center justify-center h-full pt-20">
+    <div id="counter" class="text-6xl font-extrabold mb-4">0</div>
+    <img 
+      id="hamburger" 
+      src="image/hamburger_1.png" 
+      alt="햄버거" 
+      class="cursor-pointer w-40 h-40 rounded-full shadow-lg hover:scale-110 transition-transform"
+    />
+    
+    <!-- 정보 버튼 -->
+    <button 
+      id="infoButton" 
+      class="mt-4 p-2 bg-blue-500 rounded-full text-white hover:bg-blue-600"
+    >
+      정보
+    </button>
+
+    <!-- BigMac 정보 팝업 -->
+    <div 
+      id="infoPopup" 
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 bg-white text-black p-6 rounded-xl shadow-xl opacity-0 pointer-events-none transition-opacity duration-300"
+    >
+      <div class="flex justify-between items-center">
+        <h3 id="popupTitle" class="text-xl font-bold">빅맥</h3>
+        <button 
+          id="closeButton" 
+          class="text-red-500 font-bold text-lg"
+        >
+          X
+        </button>
+      </div>
+      <div class="mt-4">
+        <p id="popupMaker"><strong>제작:</strong> 맥도날드</p>
+        <p id="popupCalories"><strong>열량:</strong> 582kcal</p>
+        <p id="popupPrice"><strong>가격:</strong> 단품으로 5500</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- script.js 파일을 로드 -->
+  <script src="script.js"></script>
+</body>
+</html>

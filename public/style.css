@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 커스텀 스타일 추가 */
+body {
+  background: linear-gradient(to bottom, #0d47a1, #1976d2);
+}
+
+.snowflake {
+  position: absolute;
+  top: -50px;
+  color: white;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}

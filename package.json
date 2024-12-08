@@ -1,18 +1,22 @@
 {
-  "name": "burger-clicker",
-  "version": "1.0.0",
-  "description": "햄버거 클릭 게임 - Tailwind CSS와 Flask를 사용하는 프로젝트",
-  "main": "app.py",
-  "scripts": {
-    "start": "python app.py",
-    "build:css": "npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/output.css --watch"
-  },
-  "keywords": ["flask", "tailwindcss", "clicker", "game"],
-  "author": "Your Name",
-  "license": "MIT",
-  "devDependencies": {
-    "tailwindcss": "^3.3.2",
-    "postcss": "^8.4.27",
-    "autoprefixer": "^10.4.15"
+    "name": "hamburger-counter",
+    "version": "1.0.0",
+    "description": "i like hambuger",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js",
+      "build:css": "npx tailwindcss -i ./public/style.css -o ./public/output.css"
+    },
+    "keywords": [],
+    "author": "cookedas1",
+    "license": "GPL-3.0-only",
+    "devDependencies": {
+      "autoprefixer": "^10.4.13",
+      "postcss": "^8.4.21",
+      "tailwindcss": "^3.3.3"
+    },
+    "dependencies": {
+      "express": "^4.18.2"
+    }
   }
-}
+  
