@@ -1,0 +1,11 @@
+/* Tailwind CSS v3.3.2 | MIT License | https://tailwindcss.com */
+/* Reset */
+@tailwind base;
+
+/* Components */
+@tailwind components;
+
+/* Utilities */
+@tailwind utilities;
+
+/* Custom Utilities */
