@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>햄버거 클리커 게임</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* 눈 내리는 효과 */
+    body {
+      background: url('https://images.unsplash.com/photo-1609146701217-8dd88526b56f?fit=crop&w=1200&q=80') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .snowflake {
+      position: absolute;
+      top: -10px;
+      color: white;
+      font-size: 1em;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+  </style>
+</head>
+<body class="h-screen flex flex-col items-center justify-center text-white">
+
+  <!-- 상단 메뉴 -->
+  <header class="w-full bg-red-500 py-4 text-center shadow-md">
+    <h1 class="text-3xl font-bold">🍔 햄버거 클리커 게임 🎄</h1>
+  </header>
+
+  <!-- 게임 영역 -->
+  <main class="flex-1 flex flex-col items-center justify-center space-y-8">
+    <!-- 햄버거 이미지 -->
+    <button id="burger-btn" class="relative group focus:outline-none">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Hamburger_icon.svg"
+        alt="햄버거"
+        class="w-40 h-40 transition transform duration-300 group-hover:scale-110"
+      />
+      <span
+        class="absolute top-0 left-0 w-full h-full bg-yellow-400 opacity-0 group-hover:opacity-10 rounded-full"
+      ></span>
+    </button>
+
+    <!-- 카운터 -->
+    <div>
+      <p class="text-2xl font-semibold">
+        🍔 누적 클릭 수: <span id="counter" class="font-bold">0</span>
+      </p>
+    </div>
+  </main>
+
+  <!-- 눈 효과 -->
+  <div id="snow-container"></div>
+
+  <script>
+    // 햄버거 클릭 시 카운터 증가
+    let counter = 0;
+    const counterEl = document.getElementById("counter");
+    const burgerBtn = document.getElementById("burger-btn");
+
+    burgerBtn.addEventListener("click", () => {
+      counter++;
+      counterEl.textContent = counter;
+    });
+
+    // 눈 내리기 효과
+    const snowContainer = document.getElementById("snow-container");
+
+    function createSnowflake() {
+      const snowflake = document.createElement("div");
+      snowflake.textContent = "❄️";
+      snowflake.classList.add("snowflake");
+      snowflake.style.left = Math.random() * 100 + "vw";
+      snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+      snowflake.style.fontSize = Math.random() * 10 + 10 + "px";
+      snowContainer.appendChild(snowflake);
+
+      setTimeout(() => {
+        snowflake.remove();
+      }, 5000);
+    }
+
+    setInterval(createSnowflake, 200);
+  </script>
+</body>
+</html>
