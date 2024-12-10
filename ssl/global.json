@@ -1,0 +1,14 @@
+{
+    "GPL": "copyright (C) studio moremi.",
+    
+    "desc": "SSL 설정을 하실 경우 먼저 IsSecret를 true로 변경하세요.",
+    "IsSecret": false
+    "SSL": {
+        "CA": "Input your SSL Ca.",
+        "PFX": "Input your SSL Pfx.",
+        "private": "Input your SSL Private.",
+        "cert": "Input your SSL cert."
+    }
+    "IsCA": false
+    "IsPFX": false; 
+}
