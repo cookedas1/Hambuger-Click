@@ -9,6 +9,6 @@
         "private": "Input your SSL Private.",
         "cert": "Input your SSL cert."
     }
-    "IsCA": false
+    "IsCA": false;
     "IsPFX": false; 
 }
